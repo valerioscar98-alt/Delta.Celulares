@@ -1,0 +1,276 @@
+/* Fondo negro global, color neón */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* 7. Fondo (Background) - AGREGADO background-image */
+    background-image: url('fondo_tecnologico.png'); 
+    background-repeat: repeat;
+    background-color: #000000; /* 1. background-color de respaldo */
+    color: #39ff14; /* Verde neón general */
+    animation: fadeInBody 1.5s ease-in;
+}
+
+a {
+    text-decoration: none;
+    color: #39ff14;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* HEADER – Negro con verde neón */
+header {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-bottom: 2px solid #39ff14;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* 8. Position */
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 1s ease-out;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header ul {
+    list-style: none;
+    display: flex; /* 9. Flexbox */
+    gap: 20px;
+}
+
+header a {
+    color: #39ff14;
+    font-weight: bold; /* 6. Textos y Fuentes */
+}
+
+header:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+/* MAIN */
+main {
+    padding: 20px; /* 5. Box Model: padding */
+}
+
+/* Tarjetas de productos */
+#productos {
+    padding: 20px 0;
+}
+
+.productos {
+    display: grid; /* 10. Grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 10. Grid y 11. Responsividad */
+    gap: 20px;
+    justify-content: center;
+    animation: fadeInSoft 2s ease-in-out;
+}
+
+/* Producto */
+.producto {
+    background-color: #111; /* 6. Textos y Fuentes */
+    padding: 15px; /* 5. Box Model: padding */
+    border: 1px solid #39ff14; /* 5. Box Model: border */
+    border-radius: 8px;
+    text-align: center;
+    width: 250px; /* 5. Box Model: width */
+    transition: transform 0.3s; /* 12. Transition */
+    color: white;
+
+    animation: floatCard 3s ease-in-out infinite alternate; /* 13. Animation */
+}
+
+.producto:hover {
+    transform: scale(1.05); /* 12. Transform */
+}
+
+.producto img {
+    width: 180px; /* 5. Box Model: width */
+    height: auto; /* 5. Box Model: height */
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInSoft 1.5s ease-in-out;
+}
+
+.producto img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px #39ff14;
+}
+
+/* BOTONES */
+button {
+    padding: 10px 20px;
+    background-color: #39ff14;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    animation: fadeInSoft 2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #2ecc10;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    border-top: 2px solid #39ff14;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    animation: fadeInSoft 2.5s ease-in-out;
+}
+
+/* Redes */
+footer ul li {
+    display: inline;
+    margin: 0 10px; /* 5. Box Model: margin */
+}
+
+/* OFERTAS */
+.oferta {
+    /* width: 30%; se recomienda eliminar para mejor responsividad, o usar unidades relativas */
+    width: 90%; /* Unidad relativa para 11. Responsividad */
+    margin: 10px auto;
+    background-color: #111;
+    border: 1px solid #39ff14;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px #39ff14;
+    color: white;
+    transition: transform 0.3s;
+    animation: floatCard 3s ease-in-out infinite alternate;
+}
+
+.oferta:hover {
+    transform: scale(1.05);
+}
+
+.tachado {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+/* 2. Contenedores HTML (<span>) - Estilo para el span agregado */
+.oferta span {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 6. Textos y Fuentes - Fuente personalizada */
+@font-face {
+    font-family: 'Externa';
+    src: url('13_Misa.ttf') format('opentype');
+}
+
+/* Nombre DELTA MOVIL */
+.fuente_externa {
+    font-family: 'Externa';
+    font-size: 45px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #39ff14;
+    animation: neonFade 2s infinite;
+}
+
+/* 3. Listas (<ol>) - Estilos para la lista ordenada agregada */
+.pasos-compra {
+    list-style-type: decimal;
+    color: #39ff14;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #111;
+    border: 1px solid #39ff14;
+    border-radius: 8px;
+}
+
+.pasos-compra li {
+    margin-bottom: 10px;
+    color: white;
+}
+
+
+/* ============================= */
+/*     13. A N I M A C I O N E S   */
+/* ============================= */
+
+/* Glow del título */
+@keyframes neonFade {
+    0% { text-shadow: 0 0 5px #39ff14; }
+    50% { text-shadow: 0 0 20px #39ff14; }
+    100% { text-shadow: 0 0 5px #39ff14; }
+}
+
+/* Animación general suave */
+@keyframes fadeInSoft {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slider entrando */
+@keyframes slideIn {
+    from { transform: translateX(-80px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+/* Aparición del header */
+@keyframes slideDown {
+    from { transform: translateY(-60px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Cuerpo aparece suave */
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Tarjetas flotando */
+@keyframes floatCard {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-6px); }
+}
+
+/* ============================= */
+/*     11. RESPONSIVIDAD (Media Query)     */
+/* ============================= */
+
+/* Aplicar cambios para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+    
+    /* Reestructurar el header */
+    header {
+        flex-direction: column; /* Apilar elementos */
+        padding: 10px;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        gap: 10px; /* Reducir espacio entre enlaces */
+        flex-wrap: wrap; /* 9. Flexbox */
+        justify-content: center;
+    }
+    
+    /* Las tarjetas de ofertas se vuelven a ancho completo */
+    .oferta {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    /* El input de búsqueda ocupa todo el ancho */
+    .search-bar {
+        width: 90%;
+        margin-top: 10px;
+    }
+}
